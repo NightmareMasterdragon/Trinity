@@ -1,7 +1,10 @@
 package com.nightmare.trinity;
 
 import com.mojang.logging.LogUtils;
+import com.nightmare.trinity.content.SDArmorMaterials;
+import com.nightmare.trinity.content.SDBlocks;
 import com.nightmare.trinity.content.SDItems;
+import com.nightmare.trinity.event.SDAbility;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -43,6 +46,9 @@ public class Trinity {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public Trinity(IEventBus modEventBus, ModContainer modContainer) {
         SDItems.ITEMS.register(modEventBus);
+        SDBlocks.BLOCKS.register(modEventBus);
+        SDArmorMaterials.register(modEventBus);
+        SDAbility.register();
 
 
 
@@ -56,6 +62,7 @@ public class Trinity {
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
-
-
+    public static net.minecraft.network.chat.Component translatable(String key, Object... args) {
+        return net.minecraft.network.chat.Component.translatable(key, args);
+    }
 }
