@@ -1,5 +1,17 @@
 {
-  "itemGroup.trinity": "Example Mod Tab",
-  "block.trinity.example_block": "Example Block",
-  "item.trinity.example_item": "Example Item"
+  "item.trinity.sculked_diamond": "Sculked Diamond",
+  "block.trinity.sculked_diamond_ore": "Sculked Diamond Ore",
+
+  "item.trinity.sculked_diamond_sword": "Sculked Diamond Sword",
+  "item.trinity.sculked_diamond_pickaxe": "Sculked Diamond Pickaxe",
+  "item.trinity.sculked_diamond_axe": "Sculked Diamond Axe",
+  "item.trinity.sculked_diamond_shovel": "Sculked Diamond Shovel",
+  "item.trinity.sculked_diamond_hoe": "Sculked Diamond Hoe",
+
+  "item.trinity.sculked_diamond_helmet": "Sculked Diamond Helmet",
+  "item.trinity.sculked_diamond_chestplate": "Sculked Diamond Chestplate",
+  "item.trinity.sculked_diamond_leggings": "Sculked Diamond Leggings",
+  "item.trinity.sculked_diamond_boots": "Sculked Diamond Boots",
+
+  "item.trinity.sculked_diamond_upgrade_template": "Sculked Diamond Upgrade Template"
 }

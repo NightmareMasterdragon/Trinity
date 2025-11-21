@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 6,
+    "discard_chance_on_air_exposure": 0.0,
+    "targets": [
+      {
+        "target": "minecraft:deepslate_ore_replaceables",
+        "state": {
+          "Name": "trinity:sculked_diamond_ore"
+        }
+      },
+      {
+        "target": "minecraft:stone_ore_replaceables",
+        "state": {
+          "Name": "trinity:sculked_diamond_ore"
+        }
+      }
+    ]
+  }
+}
