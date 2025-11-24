@@ -28,7 +28,7 @@ public final class SDItems {
     // For now, we just reuse the netherite template behaviour;
     // later we can swap to a fully custom template & JSON assets.
     public static final Supplier<SmithingTemplateItem> SCULKED_DIAMOND_UPGRADE_TEMPLATE =
-            ITEMS.register("sculked_diamond_upgrade_template.json",
+            ITEMS.register("sculked_diamond_upgrade_template",
                     SmithingTemplateItem::createNetheriteUpgradeTemplate);
 
     // === SD TOOLS (TEMP: diamond tier, abilities handled via events) ===
