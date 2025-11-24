@@ -4,6 +4,7 @@ import com.nightmare.trinity.Trinity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
@@ -33,25 +34,35 @@ public final class SDItems {
 
     // === SD TOOLS (TEMP: diamond tier, abilities handled via events) ===
 
-    public static final Supplier<SwordItem> SCULKED_DIAMOND_SWORD =
-            ITEMS.register("sculked_diamond_sword",
-                    () -> new SwordItem(Tiers.DIAMOND, new Item.Properties()));
+    // Sword
+    public static final DeferredHolder<Item, SwordItem> SCULKED_DIAMOND_SWORD = ITEMS.register(
+            "sculked_diamond_sword",
+            () -> new SwordItem(SDToolTiers.SCULKED_DIAMOND, new Item.Properties())
+    );
 
-    public static final Supplier<PickaxeItem> SCULKED_DIAMOND_PICKAXE =
-            ITEMS.register("sculked_diamond_pickaxe",
-                    () -> new PickaxeItem(Tiers.DIAMOND, new Item.Properties()));
+    // Pickaxe
+    public static final DeferredHolder<Item, PickaxeItem> SCULKED_DIAMOND_PICKAXE = ITEMS.register(
+            "sculked_diamond_pickaxe",
+            () -> new PickaxeItem(SDToolTiers.SCULKED_DIAMOND, new Item.Properties())
+    );
 
-    public static final Supplier<AxeItem> SCULKED_DIAMOND_AXE =
-            ITEMS.register("sculked_diamond_axe",
-                    () -> new AxeItem(Tiers.DIAMOND, new Item.Properties()));
+    // Axe
+    public static final DeferredHolder<Item, AxeItem> SCULKED_DIAMOND_AXE = ITEMS.register(
+            "sculked_diamond_axe",
+            () -> new AxeItem(SDToolTiers.SCULKED_DIAMOND, new Item.Properties())
+    );
 
-    public static final Supplier<ShovelItem> SCULKED_DIAMOND_SHOVEL =
-            ITEMS.register("sculked_diamond_shovel",
-                    () -> new ShovelItem(Tiers.DIAMOND, new Item.Properties()));
+    // Shovel
+    public static final DeferredHolder<Item, ShovelItem> SCULKED_DIAMOND_SHOVEL = ITEMS.register(
+            "sculked_diamond_shovel",
+            () -> new ShovelItem(SDToolTiers.SCULKED_DIAMOND, new Item.Properties())
+    );
 
-    public static final Supplier<HoeItem> SCULKED_DIAMOND_HOE =
-            ITEMS.register("sculked_diamond_hoe",
-                    () -> new HoeItem(Tiers.DIAMOND, new Item.Properties()));
+    // Hoe
+    public static final DeferredHolder<Item, HoeItem> SCULKED_DIAMOND_HOE = ITEMS.register(
+            "sculked_diamond_hoe",
+            () -> new HoeItem(SDToolTiers.SCULKED_DIAMOND, new Item.Properties())
+    );
 
     // === SD ARMOR ===
     // For now, we piggyback DIAMOND armor material (stats ≈ diamond).

@@ -1,23 +1,66 @@
 package com.nightmare.trinity.content;
 
-import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.SimpleTier;
+import net.minecraft.world.level.block.Block;
 
-public final class SDToolTiers {
+public enum SDToolTiers implements Tier {
 
-    // Sculked Diamond tools: strictly better than diamond (≈1.5x main stats).
-    public static final Tier SCULKED_DIAMOND = new SimpleTier(
-            // Use the same "incorrect" tag as diamond tools (you can make your own later).
-            BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
-            (int) (Tiers.DIAMOND.getUses() * 1.5f),        // durability
-            Tiers.DIAMOND.getSpeed() * 1.5f,               // mining speed
-            Tiers.DIAMOND.getAttackDamageBonus() * 1.5f,   // tier damage bonus
-            (int) (Tiers.DIAMOND.getEnchantmentValue() * 1.5f), // enchantability
-            () -> Ingredient.of(SDItems.SCULKED_DIAMOND.get())
+    SCULKED_DIAMOND(
+            (int) (Tiers.DIAMOND.getUses() * 1.5f),                // durability
+            Tiers.DIAMOND.getSpeed() * 1.5f,                       // mining speed
+            Tiers.DIAMOND.getAttackDamageBonus() * 1.5f,           // damage bonus
+            Tiers.DIAMOND.getIncorrectBlocksForDrops(),            // same harvest tag as diamond
+            (int) Math.round(Tiers.DIAMOND.getEnchantmentValue() * 1.5f) // enchantability
     );
 
-    private SDToolTiers() {}
+    private final int uses;
+    private final float speed;
+    private final float attackDamageBonus;
+    private final TagKey<Block> incorrectBlocksForDrops;
+    private final int enchantmentValue;
+
+    SDToolTiers(int uses,
+                float speed,
+                float attackDamageBonus,
+                TagKey<Block> incorrectBlocksForDrops,
+                int enchantmentValue) {
+        this.uses = uses;
+        this.speed = speed;
+        this.attackDamageBonus = attackDamageBonus;
+        this.incorrectBlocksForDrops = incorrectBlocksForDrops;
+        this.enchantmentValue = enchantmentValue;
+    }
+
+    @Override
+    public int getUses() {
+        return uses;
+    }
+
+    @Override
+    public float getSpeed() {
+        return speed;
+    }
+
+    @Override
+    public float getAttackDamageBonus() {
+        return attackDamageBonus;
+    }
+
+    @Override
+    public TagKey<Block> getIncorrectBlocksForDrops() {
+        return incorrectBlocksForDrops;
+    }
+
+    @Override
+    public int getEnchantmentValue() {
+        return enchantmentValue;
+    }
+
+    @Override
+    public Ingredient getRepairIngredient() {
+        return Ingredient.of(SDItems.SCULKED_DIAMOND.get());
+    }
 }

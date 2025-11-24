@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "trinity:sculked_diamond_sword",
+    "trinity:sculked_diamond_pickaxe",
+    "trinity:sculked_diamond_axe",
+    "trinity:sculked_diamond_shovel",
+    "trinity:sculked_diamond_hoe"
+  ]
+}
